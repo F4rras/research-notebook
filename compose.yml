@@ -1,0 +1,10 @@
+services:
+  research-notebook:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: research-notebook
+    ports:
+      - "3001:3000"
+    restart: unless-stopped
+

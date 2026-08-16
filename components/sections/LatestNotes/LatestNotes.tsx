@@ -10,7 +10,7 @@ export default function LatestNotes() {
             <Container>
                 <SectionTitle
                     title="Latest Notes"
-                    subtitle="Thoughts, ideas, and research notes from my learning journey."
+                    description="Thoughts, ideas, and research notes from my learning journey."
                 />
 
                 <div className="grid gap-8">

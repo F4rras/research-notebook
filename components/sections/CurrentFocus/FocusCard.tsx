@@ -1,13 +1,11 @@
 interface Props {
     title: string;
     description: string;
-    icon: string;
 }
 
 export default function FocusCard({
     title,
     description,
-    icon,
 }: Props) {
     return (
         <article className="group rounded-3xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:bg-white/8">

@@ -13,7 +13,7 @@ export default function About() {
 
                 <SectionTitle
                     title="About Me"
-                    subtitle="The person behind the Research Notebook."
+                    description="The person behind the Research Notebook."
                 />
 
                 <div className="grid items-center gap-16 lg:grid-cols-2">

@@ -2,11 +2,12 @@ import createMDX from "@next/mdx";
 import type { NextConfig } from "next";
 
 const withMDX = createMDX({
-    extension: /\.mdx?$/,
+  extension: /\.mdx?$/,
 });
 
 const nextConfig: NextConfig = {
-    pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+  pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+  output: "standalone",
 };
 
 export default withMDX(nextConfig);
