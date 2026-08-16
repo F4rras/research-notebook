@@ -1,0 +1,113 @@
+---
+title: Understanding Monte Carlo Methods
+description: An in-depth exploration of Monte Carlo methods, their applications, and how they can be used to solve complex problems in various fields.
+date: 2026-6-30
+category: Mathematics
+readTime: 10 min read
+tags:
+  - Probability
+  - Statistics
+
+# Monte Carlo
+
+## Simulation
+
+## Probability
+---
+
+# Understanding Monte Carlo Simulation
+
+Monte Carlo simulation is a computational technique
+that relies on repeated random sampling.
+
+---
+
+## Why is it useful?
+
+It is widely used in:
+
+- Finance
+- Physics
+- Engineering
+- Artificial Intelligence
+
+---
+
+
+<Callout type="info">
+
+Monte Carlo sangat cocok digunakan untuk simulasi stokastik.
+
+</Callout>
+
+
+
+## Example
+
+Prediksi modal aman pensiun
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+dana_awal = 13_000_000_000
+pengeluaran_tahunan = 240_000_000
+durasi_pensiun = 75
+
+rata_inflasi = 0.04
+std_inflasi = 0.01
+
+rata_return_investasi = 0.06
+std_return = 0.03
+
+jumlah_simulasi = 10000
+sukses = 0
+semua_alur_dana = []
+
+for i in range(jumlah_simulasi):
+    saldo = dana_awal
+    biaya_hidup = pengeluaran_tahunan
+    alur_saldo_tahunan = [saldo]
+
+    for tahun in range(durasi_pensiun):
+
+        inflasi_tahun_ini = np.random.normal(rata_inflasi, std_inflasi)
+        return_tahun_ini = np.random.normal(rata_return_investasi, std_return)
+
+        biaya_hidup *= (1 + inflasi_tahun_ini)
+
+        saldo = (saldo - biaya_hidup) * (1 + return_tahun_ini)
+
+        if saldo < 0:
+            saldo = 0
+
+        alur_saldo_tahunan.append(saldo)
+
+    semua_alur_dana.append(alur_saldo_tahunan)
+    if saldo > 0:
+        sukses += 1
+
+
+peluang_sukses = (sukses / jumlah_simulasi) * 100
+
+print("=== HASIL ANALISIS===")
+print(f"Total Skenario Diuji : {jumlah_simulasi} kali masa depan yang berbeda")
+print(f"Peluang Dana Cukup   : {peluang_sukses:.2f}%")
+print("==================================")
+if peluang_sukses >= 85:
+    print("Kesimpulan: Rencana pensiunmu sangat aman!")
+else:
+    print("Kesimpulan: Risiko tinggi! Kurangi pengeluaran atau tambah dana awal.")
+
+
+plt.figure(figsize=(10, 5))
+for alur in semua_alur_dana[:1000]:
+    plt.plot(alur, color='gray', alpha=0.1)
+plt.title(
+    f"Simulasi Masa Depan Dana Pensiun (Peluang Sukses: {peluang_sukses:.2f}%)")
+plt.xlabel("Tahun Pensiun")
+plt.ylabel("Sisa Uang (Rupiah)")
+plt.axhline(0, color='red', linestyle='--', label='Batas Uang Habis')
+plt.grid(True, alpha=0.2)
+plt.show()
