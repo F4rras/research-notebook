@@ -21,29 +21,40 @@ export default function ArticleHeader({
     tags,
 }: Props) {
     return (
-        <header className="mb-12">
+        <header className="mb-10 sm:mb-12">
+
+            {/* Back */}
             <Link
                 href="/notebook"
-                className="inline-flex items-center gap-2 text-gray-400 hover:text-cyan-400 mb-8"
+                className="mb-6 inline-flex items-center gap-2 text-sm text-gray-400 transition-colors hover:text-cyan-400 sm:mb-8 sm:text-base"
             >
                 <ArrowLeft size={18} />
                 Back to Notebook
             </Link>
 
-            <h1 className="mt-3 text-5xl font-bold">
+            {/* Title */}
+            <h1 className="break-words text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
                 {title}
             </h1>
 
-            <p className="mt-4  text-xl text-gray-400">
+            {/* Description */}
+            <p className="mt-4 text-base leading-7 text-gray-400 sm:text-lg sm:leading-8 lg:text-xl">
                 {description}
             </p>
-            <div className="mt-3 mb-6 flex items-center gap-4 text-sm text-gray-500">
+
+            {/* Metadata */}
+            <div className="mt-4 mb-5 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-gray-500 sm:mt-3 sm:mb-6 sm:text-sm">
                 <span>{date}</span>
+
                 <span>•</span>
+
                 <span>{readTime}</span>
             </div>
+
+            {/* Category */}
             <CategoryBadge category={category} />
 
+            {/* Tags */}
             <div className="mt-3 flex flex-wrap gap-2">
                 {tags.map((tag) => (
                     <Tag

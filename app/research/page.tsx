@@ -1,22 +1,20 @@
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
-import ResearchCard from "./ResearchCard";
+import ResearchCard from "@/components/sections/FeaturedResearch/ResearchCard";
 import { research } from "@/data/research";
 
-export default function FeaturedResearch() {
+export default function ResearchPage() {
     return (
-        <section
-            id="featured-research"
-            className="py-16 sm:py-20 lg:py-28"
-        >
+        <main className="min-h-screen pt-28 pb-20 sm:pt-32 sm:pb-28">
             <Container>
 
                 <SectionTitle
-                    title="Featured Research"
-                    description="Projects and research I'm currently working on."
+                    eyebrow="Research"
+                    title="Research"
+                    description="Scientific questions, investigations, experiments, and ideas I'm exploring."
                 />
 
-                <div className="grid gap-5 sm:gap-6 md:grid-cols-2 xl:grid-cols-3">
+                <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
                     {research.map((item) => (
                         <ResearchCard
                             key={item.id}
@@ -26,6 +24,6 @@ export default function FeaturedResearch() {
                 </div>
 
             </Container>
-        </section>
+        </main>
     );
 }

@@ -5,7 +5,7 @@ import { currentFocus } from "@/data/currentFocus";
 
 export default function CurrentFocus() {
     return (
-        <section className="py-28">
+        <section className="py-16 sm:py-20 lg:py-28">
             <Container>
 
                 <SectionTitle
@@ -14,7 +14,7 @@ export default function CurrentFocus() {
                     description="The topics and technologies I'm actively exploring."
                 />
 
-                <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <div className="mt-10 grid gap-5 sm:mt-12 sm:gap-6 md:grid-cols-2 lg:mt-14 lg:grid-cols-3">
                     {currentFocus.map((item) => (
                         <FocusCard
                             key={item.title}

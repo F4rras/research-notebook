@@ -5,8 +5,6 @@ import CurrentFocus from "@/components/sections/CurrentFocus/CurrentFocus";
 import FeaturedResearch from "@/components/sections/FeaturedResearch/FeaturedResearch";
 import LatestNotes from "@/components/sections/LatestNotes/LatestNotes";
 import About from "@/components/sections/About/About";
-import HeroArtwork from "@/components/sections/HeroArtwork";
-import SearchDialog from "@/components/Search/SearchDialog";
 
 export default function Home() {
   return (
@@ -21,7 +19,6 @@ export default function Home() {
         <LatestNotes />
         <About />
       </main>
-
     </>
   );
 }

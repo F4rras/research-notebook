@@ -20,11 +20,17 @@ export default function SearchBar({
                 rounded-xl
                 border border-white/10
                 bg-white/5
-                px-5
-                py-3
+                px-4 py-3
+                text-sm
                 text-white
+                placeholder:text-zinc-500
                 outline-none
+                transition
                 focus:border-cyan-400
+                focus:ring-1
+                focus:ring-cyan-400/30
+                sm:px-5
+                sm:text-base
             "
         />
     );

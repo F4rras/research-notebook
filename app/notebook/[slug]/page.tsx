@@ -32,7 +32,9 @@ export default async function NotePage({
         <>
             <ReadingProgress />
             <ScrollToTop />
+
             <ArticleLayout>
+
                 <ArticleHeader
                     title={note.title}
                     description={note.description}
@@ -40,19 +42,59 @@ export default async function NotePage({
                     date={note.date}
                     readTime={`${note.metadata.readingTime} min read`}
                     tags={note.tags}
-
                 />
 
-                <div className="grid grid-cols-12 gap-12">
-                    <article className="col-span-8 lg:col-span-9 prose prose-invert max-w-none prose-a:text-cyan-400 prose-a:no-underline hover:prose-a:underline prose-a:transition prose-a:duration-300 prose-a:ease-in-out prose-a:hover:text-cyan-300 prose-a:focus:text-cyan-300 prose-a:active:text-cyan-300 prose-a:visited:text-cyan-400 prose-a:visited:hover:text-cyan-300 prose-a:visited:focus:text-cyan-300 prose-a:visited:active:text-cyan-300 prose-code:text-cyan-400 prose-code:font-mono prose-code:text-sm prose-code:bg-white/5 prose-code:px-1 prose-code:py-0.5 prose-code:rounded-md prose-code:before:content-[''] prose-code:after:content-['']">
+                {/* Article + Table of Contents */}
+                <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
+
+                    <article
+                        className="
+            min-w-0
+            lg:col-span-9
+            prose
+            prose-invert
+            max-w-none
+            prose-a:text-cyan-400
+            prose-a:no-underline
+            hover:prose-a:underline
+            prose-a:transition
+            prose-a:duration-300
+            prose-a:ease-in-out
+            prose-a:hover:text-cyan-300
+            prose-a:focus:text-cyan-300
+            prose-a:active:text-cyan-300
+            prose-a:visited:text-cyan-400
+            prose-a:visited:hover:text-cyan-300
+            prose-a:visited:focus:text-cyan-300
+            prose-a:visited:active:text-cyan-300
+            prose-code:text-cyan-400
+            prose-code:font-mono
+            prose-code:text-sm
+            prose-code:bg-white/5
+            prose-code:px-1
+            prose-code:py-0.5
+            prose-code:rounded-md
+            prose-code:before:content-['']
+            prose-code:after:content-['']
+        "
+                    >
                         <MDXContent code={note.content} />
                     </article>
-                    <ActiveTOC toc={note.toc} />
+
+                    <div className="lg:col-span-3">
+                        <ActiveTOC toc={note.toc} />
+                    </div>
+
                 </div>
+
+                {/* Related Notes */}
                 <RelatedNotes notes={related} />
-                <div className="mt-20">
+
+                {/* Comments */}
+                <div className="mt-16 sm:mt-20">
                     <Comments />
                 </div>
+
             </ArticleLayout>
         </>
     );

@@ -11,6 +11,7 @@ export interface ResearchItem {
     status: string;
     category: string;
     description: string;
+    slug: string;
     tags: string[];
     image: string;
     color: string;

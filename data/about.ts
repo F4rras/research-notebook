@@ -1,10 +1,3 @@
-export const interests = [
-    "Mathematics",
-    "Theoretical Physics",
-    "Artificial Intelligence",
-    "Engineering",
-];
-
 export const current = [
     {
         icon: "📚",
@@ -12,7 +5,7 @@ export const current = [
         value: "Stochastic Processes",
     },
     {
-        icon: "🔬",
+        icon: "🔨",
         title: "Building",
         value: "HYMLET",
     },
@@ -27,4 +20,3 @@ export const current = [
         value: "STEI-R ITB",
     },
 ];
-

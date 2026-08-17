@@ -10,6 +10,7 @@ type Props = {
     type?: "info" | "warning" | "success" | "danger" | "tip";
     children: React.ReactNode;
 };
+
 const titles = {
     info: "Info",
     warning: "Warning",
@@ -17,6 +18,7 @@ const titles = {
     danger: "Danger",
     tip: "Tip",
 };
+
 const variants = {
     info: {
         icon: Info,
@@ -60,27 +62,34 @@ export default function Callout({
     return (
         <div
             className={`
-            my-8 rounded-xl border-l-4
-            p-5
-            ${variant.border}
-            ${variant.bg}
-        `}
+                my-6 rounded-xl border-l-4
+                p-4
+                sm:my-8 sm:p-5
+                ${variant.border}
+                ${variant.bg}
+            `}
         >
-            <div className="flex gap-3">
+            <div className="flex min-w-0 gap-3">
+
                 <Icon
-                    className={`${variant.text} mt-1 flex-shrink-0`}
+                    className={`${variant.text} mt-1 shrink-0`}
                     size={20}
                 />
 
-                <div>
-                    <div className={`mb-2 font-semibold ${variant.text}`}>
+                <div className="min-w-0 flex-1">
+
+                    <div
+                        className={`mb-2 font-semibold ${variant.text}`}
+                    >
                         {titles[type]}
                     </div>
 
-                    <div className="prose prose-invert max-w-none">
+                    <div className="prose prose-invert max-w-none break-words">
                         {children}
                     </div>
+
                 </div>
+
             </div>
         </div>
     );
