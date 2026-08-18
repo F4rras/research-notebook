@@ -1,5 +1,6 @@
 import CodeBlock from "./CodeBlock";
 import Callout from "./Callout";
+import { useState } from "react";
 
 export const mdxComponents = {
     Callout,
@@ -13,7 +14,7 @@ export const mdxComponents = {
 
         const code =
             children.props.children;
-
+        const [mobileOpen, setMobileOpen] = useState(false);
         return (
             <CodeBlock lang={language}>
                 {code}

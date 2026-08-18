@@ -8,7 +8,7 @@ export default function Hero() {
             <Container>
                 <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
                     <HeroContent />
-                    <div className="mb-50">
+                    <div className="mb-[-6rem] lg:mb-0">
                         <HeroArtwork />
                     </div>
                 </div>

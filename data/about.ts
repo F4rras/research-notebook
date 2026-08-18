@@ -1,3 +1,10 @@
+export const interests = [
+    "Mathematics",
+    "Physics",
+    "Computer Science",
+    "Research",
+];
+
 export const current = [
     {
         icon: "📚",

@@ -5,6 +5,7 @@ import CurrentFocus from "@/components/sections/CurrentFocus/CurrentFocus";
 import FeaturedResearch from "@/components/sections/FeaturedResearch/FeaturedResearch";
 import LatestNotes from "@/components/sections/LatestNotes/LatestNotes";
 import About from "@/components/sections/About/About";
+import FeaturedProjects from "@/components/sections/FeaturedProjects/FeaturedProjects";
 
 export default function Home() {
   return (
@@ -14,9 +15,10 @@ export default function Home() {
 
       <main className="relative z-10">
         <Hero />
-        <CurrentFocus />
         <FeaturedResearch />
+        <FeaturedProjects />
         <LatestNotes />
+        <CurrentFocus />
         <About />
       </main>
     </>

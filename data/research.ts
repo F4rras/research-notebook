@@ -10,7 +10,6 @@ export const research: ResearchItem[] = [
         description:
             "Non-Invasive Blood Glucose Estimation Using Wearable Physiological Data and Machine Learning",
         tags: ["IoT", "Embedded", "Healthcare"],
-        image: "/images/research/hymlet.jpg",
         color: "blue",
     },
 

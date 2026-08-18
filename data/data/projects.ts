@@ -1,29 +1,54 @@
 export interface Project {
-    id: string;
+    id: number;
+    slug: string;
     title: string;
-    category: string;
-    status: "Active" | "Completed" | "Experimental";
     description: string;
+    category: string;
+    status: string;
+    tags: string[];
+    link?: string;
+    image?: string;
+
+    overview: string;
     technologies: string[];
-    href?: string;
+    highlights: string[];
 }
 
 export const projects: Project[] = [
+
     {
-        id: "hymlet",
-        title: "Hymlet",
-        category: "IoT / Biomedical",
-        status: "Experimental",
+        id: 1,
+        slug: "hymlet",
+        title: "HYMLET",
         description:
-            "A wearable healthcare project that combines physiological indicators with Machine Learning to explore non-invasive blood glucose estimation.",
+            "A wearable IoT healthcare system combining physiological indicators and machine learning to estimate blood glucose levels.",
+        category: "IoT & AI",
+        status: "ONGOING",
+        tags: [
+            "ESP32",
+            "IoT",
+            "Machine Learning",
+            "Healthcare",
+        ],
+
+        overview:
+            "HYMLET is an ongoing research and engineering project exploring whether multiple physiological indicators collected through a wearable IoT device can be combined with machine learning to estimate blood glucose levels.",
+
         technologies: [
             "ESP32",
             "MAX30102",
             "MLX90614",
             "MicroSD",
-            "Arduino",
             "Python",
             "Machine Learning",
+        ],
+
+        highlights: [
+            "Wearable physiological monitoring",
+            "Heart rate and SpO₂ measurement",
+            "Body temperature measurement",
+            "Multi-sensor data collection",
+            "Machine learning pipeline",
         ],
     },
 ];

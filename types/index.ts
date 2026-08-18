@@ -13,7 +13,7 @@ export interface ResearchItem {
     description: string;
     slug: string;
     tags: string[];
-    image: string;
+    image?: string;
     color: string;
 }
 

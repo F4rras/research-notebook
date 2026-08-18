@@ -9,7 +9,6 @@ export default function CurrentFocus() {
             <Container>
 
                 <SectionTitle
-                    eyebrow="Research"
                     title="Current Focus"
                     description="The topics and technologies I'm actively exploring."
                 />
