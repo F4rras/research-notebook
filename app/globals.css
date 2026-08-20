@@ -3,10 +3,7 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-/* Tailwind custom variant - commented out to avoid unknown at-rule warning in CSS parsers.
-  If using a Tailwind plugin that supports @custom-variant, restore this line or configure
-  the plugin accordingly. */
-/* @custom-variant dark (&:is(.dark *)); */
+@custom-variant dark (&:is(.dark *));
 
 html {
   scroll-behavior: smooth;
@@ -221,11 +218,9 @@ pre code {
   * {
     @apply border-border outline-ring/50;
   }
-
   body {
     @apply bg-background text-foreground;
   }
-
   html {
     @apply font-sans;
   }

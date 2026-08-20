@@ -2,9 +2,8 @@ import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
 
 import InterestBadge from "./InterestBadge";
-import CurrentCard from "./CurrentCard";
 
-import { interests, current } from "@/data/about";
+import { interests } from "@/data/about";
 
 export default function About() {
     return (
@@ -83,30 +82,6 @@ export default function About() {
                     </div>
 
                 </div>
-
-                {/* Current */}
-
-                <div className="mt-16 sm:mt-20 lg:mt-24">
-
-                    <h3 className="mb-6 text-2xl font-bold sm:mb-8 sm:text-3xl">
-                        Currently
-                    </h3>
-
-                    <div className="grid gap-5 sm:gap-6 md:grid-cols-2 xl:grid-cols-4">
-
-                        {current.map((item) => (
-                            <CurrentCard
-                                key={item.title}
-                                icon={item.icon}
-                                title={item.title}
-                                value={item.value}
-                            />
-                        ))}
-
-                    </div>
-
-                </div>
-
             </Container>
         </section>
     );
